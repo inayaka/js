@@ -21,5 +21,28 @@ const images = [         // tablica obiektów
       img.src = "img/"+images[slideNr].src
       img.alt = images[slideNr].name
     }
+    showSlide(0)
+    console.log(images)
+    let currentSlide = 0;
+    function changeSlide( side ){
+      if (side == 'right'){
+          if(currentSlide > images.length){
+
+          }
+        currentSlide++
+      }else{
+        currentSlide--
+      }
+      showSlide(currentSlide)
+    }
+
+    document.querySelector(".left").addEventListener("click", () =>{
+      changeSlide('left')
+    })
+    document.querySelector(".right").addEventListener("click", () =>{
+      changeSlide('right')
+    })
     
-    showSlide(2)
+   
+    
+    // console.log(images[2])
